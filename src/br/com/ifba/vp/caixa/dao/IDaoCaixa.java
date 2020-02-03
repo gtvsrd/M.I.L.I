@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.ifba.vp.cliente.bean;
-import br.com.ifba.vp.infrastructure.pessoa.Pessoa;
+package br.com.ifba.vp.caixa.dao;
+
 /**
  *
- * @author Icaro
+ * @author gusta
  */
-public class Cliente extends Pessoa{
-
+public interface IDaoCaixa {
     
 }

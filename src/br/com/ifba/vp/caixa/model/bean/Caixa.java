@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.ifba.vp.gerente.bean;
+package br.com.ifba.vp.caixa.model.bean;
 
 import br.com.ifba.vp.infrastructure.connection.Funcionario;
 
@@ -11,15 +11,7 @@ import br.com.ifba.vp.infrastructure.connection.Funcionario;
  *
  * @author Icaro
  */
-public class Gerente extends Funcionario {
-    
-    void CadastroFornecedor(){
-        
-    }
-    
-    void CadastroFuncionario(){
-        
-    }
+public class Caixa extends Funcionario{
 
     @Override
     public void CadastroCliente() {
@@ -35,5 +27,5 @@ public class Gerente extends Funcionario {
     public void ControleEstoque() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+      
 }

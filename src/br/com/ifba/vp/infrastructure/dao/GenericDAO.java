@@ -6,68 +6,69 @@
 package br.com.ifba.vp.infrastructure.dao;
 
 import br.com.ifba.vp.infrastructure.model.AbstractEntity;
+import java.lang.reflect.ParameterizedType;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
 
 /**
  *
  * @author gusta
  */
-public abstract class GenericDAO<T, I extends AbstractEntity> {
+public class GenericDAO<T extends AbstractEntity> {
 
-   protected EntityManager entityManager;
-
-   private Class<T> persistedClass;
-
-   protected GenericDAO() {
+   protected static EntityManager entityManager;
+   
+   static {
+       EntityManagerFactory fac = Persistence.createEntityManagerFactory("Mili");
+       entityManager = fac.createEntityManager();
    }
 
-   protected GenericDAO(Class<T> persistedClass) {
-       this();
-       this.persistedClass = persistedClass;
+   public T getById(Long id) {
+       return (T) entityManager.find(getTypeClass(), id);
    }
-
-   public T salvar(T entity) {
-       EntityTransaction t = entityManager.getTransaction();
-       t.begin();
-       entityManager.persist(entity);
-       entityManager.flush();
-       t.commit();
-       return entity;
+   
+   public void save(T entity) {
+       try {
+           entityManager.getTransaction().begin();
+           entityManager.persist(entity);
+           entityManager.getTransaction().commit();
+       } catch(Exception e){
+           e.printStackTrace();
+           entityManager.getTransaction().rollback();
+       }
    }
-
-   public T atualizar(T entity) {
-       EntityTransaction t = entityManager.getTransaction();
-       t.begin();
-       entityManager.merge(entity);
-       entityManager.flush();
-       t.commit();
-       return entity;
+   
+   public void update(T entity) {
+       try{
+           entityManager.getTransaction().begin();
+           entityManager.merge(entity);
+           entityManager.getTransaction().commit();
+       } catch(Exception e){
+           e.printStackTrace();
+           entityManager.getTransaction().rollback();
+       }
    }
-
-   public void remover(I id) {
-       T entity = encontrar(id);
-       EntityTransaction tx = entityManager.getTransaction();
-       tx.begin();
-       T mergedEntity = entityManager.merge(entity);
-       entityManager.remove(mergedEntity);
-       entityManager.flush();
-       tx.commit();
+   
+   public void delete(T entity) {
+       try{
+           entity = getById(entity.getId());
+           entityManager.getTransaction().begin();
+           entityManager.remove(entity);
+           entityManager.getTransaction().commit();
+       } catch(Exception e) {
+           e.printStackTrace();
+           entityManager.getTransaction().rollback();
+       }
    }
-
-   public List<T> getList() {
-       CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-       CriteriaQuery<T> query = builder.createQuery(persistedClass);
-       query.from(persistedClass);
-       return entityManager.createQuery(query).getResultList();
+   
+   public List<T> findAll() {
+       return entityManager.createQuery(("From " + getTypeClass().getName())).getResultList();
    }
-
-   public T encontrar(I id) {
-       return entityManager.find(persistedClass, id);
+   
+   private Class<?> getTypeClass() {
+       Class<?> clazz = (Class<?>) ((ParameterizedType) this.getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+       return clazz;
    }
 }
