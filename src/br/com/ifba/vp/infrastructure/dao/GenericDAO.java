@@ -21,7 +21,7 @@ public class GenericDAO<T extends AbstractEntity> {
    protected static EntityManager entityManager;
    
    static {
-       EntityManagerFactory fac = Persistence.createEntityManagerFactory("Mili");
+       EntityManagerFactory fac = Persistence.createEntityManagerFactory("mili");
        entityManager = fac.createEntityManager();
    }
 

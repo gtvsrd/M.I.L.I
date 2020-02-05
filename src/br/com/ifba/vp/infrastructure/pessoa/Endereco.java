@@ -5,11 +5,23 @@
  */
 package br.com.ifba.vp.infrastructure.pessoa;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
 /**
  *
  * @author gusta
  */
+@Entity
 public class Endereco {
+    
+    @Id
+    @GeneratedValue
+    private Long id;
+    
     private Integer cep;
     private String estado;
     private String cidade;;

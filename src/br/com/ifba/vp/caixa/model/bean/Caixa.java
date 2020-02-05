@@ -6,13 +6,19 @@
 package br.com.ifba.vp.caixa.model.bean;
 
 import br.com.ifba.vp.infrastructure.connection.Funcionario;
+import br.com.ifba.vp.infrastructure.pessoa.Endereco;
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author Icaro
  */
-public class Caixa extends Funcionario{
 
+@Entity
+public class Caixa extends Funcionario{
+    @OneToOne
+    private Endereco endereco;
     @Override
     public void CadastroCliente() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

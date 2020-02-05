@@ -14,7 +14,7 @@ import javax.persistence.Persistence;
  * @author gusta
  */
 public class ConnectionFactory {
-    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoJPA");
+    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("mili");
     public EntityManager getConnection() {
         return emf.createEntityManager();
     }

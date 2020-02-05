@@ -5,10 +5,12 @@
  */
 package br.com.ifba.vp.infrastructure.service;
 
+import br.com.ifba.vp.caixa.model.bean.Caixa;
+
 /**
  *
  * @author gusta
  */
 public interface IServiceLogin {
-    
+    public abstract void Login(Long id, Long senha);
 }

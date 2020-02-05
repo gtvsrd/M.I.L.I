@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.ifba.vp.caixa.dao;
+package br.com.ifba.vp.gerente.dao;
 
-import br.com.ifba.vp.caixa.model.bean.Caixa;
+import br.com.ifba.vp.gerente.model.bean.Gerente;
 import br.com.ifba.vp.infrastructure.dao.GenericDAO;
 import java.util.List;
 
@@ -13,11 +13,12 @@ import java.util.List;
  *
  * @author gusta
  */
-public class DaoCaixa extends GenericDAO<Caixa> implements IDaoCaixa{
+public class DaoGerente extends GenericDAO<Gerente> implements IDaoGerente {
+
     @Override
-    public List<Caixa> findByIdSenhaCaixa(Caixa caixa) {
-        
-        String query = "select caixa from Caixa caixa WHERE caixa.id = "+ caixa.getId() +" and senha = "+ caixa.getSenha() +" ";
+    public List<Gerente> findByIdSenhaGerente(Gerente gerente) {
+        String query = "select caixa from Caixa caixa WHERE caixa.id = "+ gerente.getId() +" and senha = "+ gerente.getSenha() +" ";
         return GenericDAO.entityManager.createQuery(query).getResultList();
     }
+    
 }

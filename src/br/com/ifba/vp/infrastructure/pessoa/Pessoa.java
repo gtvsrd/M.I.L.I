@@ -6,26 +6,22 @@
 package br.com.ifba.vp.infrastructure.pessoa;
 
 import br.com.ifba.vp.infrastructure.model.AbstractEntity;
+import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author Icaro
  */
+
+@MappedSuperclass
 public abstract class Pessoa extends AbstractEntity{
     
-    private Endereco endereco;
     private String nome;
     private Long telefone;
     private Long rg;
     private String sexo;
-
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
 
     public String getNome() {
         return nome;

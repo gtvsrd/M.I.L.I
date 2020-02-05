@@ -7,13 +7,14 @@ package br.com.ifba.vp.infrastructure.connection;
 
 import br.com.ifba.vp.infrastructure.pessoa.Pessoa;
 import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
 
 /**
  *
  * @author Icaro
  */
-@Entity
+
+@MappedSuperclass
 public abstract class Funcionario extends Pessoa {
     
     protected Boolean gerente;

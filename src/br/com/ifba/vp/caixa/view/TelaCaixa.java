@@ -5,8 +5,6 @@
  */
 package br.com.ifba.vp.caixa.view;
 
-import Model.DAO.ProdutosDAO;
-import Model.bean.Produtos;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 

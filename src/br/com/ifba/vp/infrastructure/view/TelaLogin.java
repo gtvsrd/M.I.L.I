@@ -5,9 +5,9 @@
  */
 package br.com.ifba.vp.infrastructure.view;
 
-import br.com.ifba.vp.caixa.model.bean.Caixa;
-import java.util.ArrayList;
-import java.util.List;
+
+import br.com.ifba.vp.infrastructure.service.Facade;
+import br.com.ifba.vp.infrastructure.service.IFacade;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  * @author lab02
  */
 public class TelaLogin extends javax.swing.JFrame{
-
+    private final IFacade facade = new Facade();
     /**
      * Creates new form TelaLogin
      */
@@ -40,7 +40,6 @@ public class TelaLogin extends javax.swing.JFrame{
         jLabel2 = new javax.swing.JLabel();
         jPasswordSenha = new javax.swing.JPasswordField();
         jButtonEntrar = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
@@ -95,7 +94,7 @@ public class TelaLogin extends javax.swing.JFrame{
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BonecoLogin.png"))); // NOI18N
+        
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel4.setText("M.I.L.I Automação");
@@ -116,7 +115,6 @@ public class TelaLogin extends javax.swing.JFrame{
                     .addComponent(jButtonEntrar))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -131,7 +129,6 @@ public class TelaLogin extends javax.swing.JFrame{
                 .addGap(38, 38, 38)
                 .addComponent(jLabel4)
                 .addGap(44, 44, 44)
-                .addComponent(jLabel3)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -170,52 +167,16 @@ public class TelaLogin extends javax.swing.JFrame{
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
         // TODO add your handling code here:
-        Caixa c = new Caixa();
-        c.setId(Long.parseLong(jTextFieldCPF.getText()));
-        c.setSenha(Long.parseLong(jPasswordSenha.getText()));
-        
-        long cpf = 0; //= Long.parseLong(jTextField1.getText());
-        int senha = 0; //= Integer.parseInt(jPasswordField1.getText());
-        int i = 2;
-        
-        try{
-            
-            cpf = Long.parseLong(jTextFieldCPF.getText());
-            senha = Integer.parseInt(jPasswordSenha.getText());
-            
-        }catch(NumberFormatException ex){
-            
-            JOptionPane.showMessageDialog(null, "Digite apenas números inteiros!");
-            i = 3;
-            
-        }
-        
-        try{
-            for(Caixa F: fdao.Login()){
-                
-                
-                if(F.getCPF() == cpf && F.getSenha() == senha){
-                    i  = 1;
-                }
-                
+        Long cpf = null; //= Long.parseLong(jTextField1.getText());
+        Long senha = null; //= Integer.parseInt(jPasswordField1.getText());    
 
-            }
+        try{          
+            cpf = Long.parseLong(jTextFieldCPF.getText());
+            senha = Long.parseLong(jPasswordSenha.getText());          
         }catch(NumberFormatException ex){
-            JOptionPane.showMessageDialog(null, "Digite apenas números inteiros!");
-        }
-             
-        if(i == 1 ){
-            new TelaFuncionario().setVisible(true);
-            this.dispose();
-            
-        }
-        if(cpf == 12345678911L && senha == 1221){
-            new TelaGerente().setVisible(true);
-            this.dispose();
-            i++;
-        }
-        if(i == 2){
-            JOptionPane.showMessageDialog(null, "Usuario não cadastrado!");
+            JOptionPane.showMessageDialog(null, "Digite apenas números inteiros.");
+        }finally{
+            facade.Login(cpf,senha);
         }
         
         
@@ -259,6 +220,7 @@ public class TelaLogin extends javax.swing.JFrame{
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new TelaLogin().setVisible(true);
             }
@@ -269,7 +231,6 @@ public class TelaLogin extends javax.swing.JFrame{
     private javax.swing.JButton jButtonEntrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;

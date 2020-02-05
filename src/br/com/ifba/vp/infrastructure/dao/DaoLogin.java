@@ -3,15 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.ifba.vp.caixa.dao;
+package br.com.ifba.vp.infrastructure.dao;
 
-import br.com.ifba.vp.caixa.model.bean.Caixa;
-import java.util.List;
-
+import br.com.ifba.vp.infrastructure.connection.Funcionario;
 /**
  *
  * @author gusta
  */
-public interface IDaoCaixa {
-    public abstract List<Caixa> findByIdSenhaCaixa(Caixa caixa);
+public class DaoLogin extends GenericDAO<Funcionario> implements IDaoLogin {
+    
 }

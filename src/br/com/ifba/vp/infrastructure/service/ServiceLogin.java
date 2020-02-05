@@ -5,9 +5,14 @@
  */
 package br.com.ifba.vp.infrastructure.service;
 
+import br.com.ifba.vp.caixa.dao.DaoCaixa;
 import br.com.ifba.vp.caixa.model.bean.Caixa;
-import br.com.ifba.vp.caixa.service.ServiceCaixa;
+
+import br.com.ifba.vp.gerente.dao.DaoGerente;
+import br.com.ifba.vp.gerente.model.bean.Gerente;
+
 import br.com.ifba.vp.caixa.view.TelaCaixa;
+import br.com.ifba.vp.gerente.view.TelaGerente;
 import br.com.ifba.vp.infrastructure.exception.BusinessException;
 
 /**
@@ -28,27 +33,35 @@ public class ServiceLogin implements IServiceLogin {
     
     
     @Override
-    public TelaCaixa loginFuncionarioCaixa(Caixa funcionarioCaixa) {
-        if(funcionarioCaixa == null) {
-            throw new BusinessException(FUNCIONARIO_NULL);
-        }
-        if(funcionarioCaixa.getId() == null) {
+    public void Login(Long id, Long senha) {
+        if(id == null) {
             throw new BusinessException(CPF_NULL);
         }
-        if(funcionarioCaixa.getSenha() == null) {
+        if(senha == null) {
             throw new BusinessException(SENHA_NULL);
         }
         
-        ServiceCaixa sfc = new ServiceCaixa();
-        if(sfc.getByIdFuncionarioCaixa(funcionarioCaixa.getId()) == null){
-            throw new BusinessException(FUNCIONARIO_NAO_EXISTE);
-        }
-        if(funcionarioCaixa.getId() == 76815194960 && funcionarioCaixa.getSenha() == 511671) {
+        Caixa caixa = new Caixa();
+        caixa.setId(id);
+        caixa.setSenha(senha);
+        DaoCaixa daoCaixa = new DaoCaixa();
+        
+        if(daoCaixa.findByIdSenhaCaixa(caixa) == null){
             
+            Gerente gerente = new Gerente();
+            gerente.setId(id);
+            gerente.setSenha(senha);
+            DaoGerente daoGerente = new DaoGerente();
+            
+            if(daoGerente.findByIdSenhaGerente(gerente) == null) {
+                throw new BusinessException(FUNCIONARIO_NAO_EXISTE);
+            } else {
+                TelaGerente telaGerente = new TelaGerente();
+                telaGerente.setVisible(true);
+            }
+        } else {
+            TelaCaixa telaFuncionarioCaixa = new TelaCaixa();
+            telaFuncionarioCaixa.setVisible(true);
         }
-        
-        TelaCaixa telaFuncionarioCaixa = new TelaCaixa();
-        
-        return telaFuncionarioCaixa.setVisible(true);
     }
 }
