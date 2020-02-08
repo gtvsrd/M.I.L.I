@@ -6,9 +6,7 @@
 package br.com.ifba.vp.caixa.model.bean;
 
 import br.com.ifba.vp.infrastructure.connection.Funcionario;
-import br.com.ifba.vp.infrastructure.pessoa.Endereco;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
 
 /**
  *
@@ -17,21 +15,15 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class Caixa extends Funcionario{
-    @OneToOne
-    private Endereco endereco;
-    @Override
-    public void CadastroCliente() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
+    protected String especializacao;
 
-    @Override
-    public void CadastroProduto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getEspecializacao() {
+        return especializacao;
     }
-
-    @Override
-    public void ControleEstoque() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public void setEspecializacao(String especializacao) {
+        this.especializacao = especializacao;
     }
       
 }

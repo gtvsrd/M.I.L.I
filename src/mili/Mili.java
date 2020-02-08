@@ -5,7 +5,7 @@
  */
 package mili;
 
-import br.com.ifba.vp.infrastructure.view.TelaLogin;
+import br.com.ifba.vp.login.view.TelaLogin;
 
 /**
  *
@@ -14,6 +14,8 @@ import br.com.ifba.vp.infrastructure.view.TelaLogin;
 public class Mili {
     public static void main(String[] args) {
         // TODO code application logic here
-        new TelaLogin().setVisible(true);
+        TelaLogin telaLogin;
+        telaLogin = new TelaLogin();
+        telaLogin.setVisible(true);
     }
 }

@@ -17,8 +17,11 @@ public class CaixaTest {
     public static void main(String[] args) {
 
         Long senha = 40028922L;
+        
         Caixa c = new Caixa();
         c.setSenha(senha);
+        c.setRg(senha);
+        c.setNome("Gustavo");
         
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("mili");
         EntityManager em = emf.createEntityManager();

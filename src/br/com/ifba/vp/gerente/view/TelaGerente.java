@@ -1,9 +1,15 @@
+package br.com.ifba.vp.gerente.view;
+
+import br.com.ifba.vp.estoque.view.TelaVerificarEstoque;
+import br.com.ifba.vp.fornecedor.view.TelaCadastroFornecedor;
+import br.com.ifba.vp.login.view.TelaLogin;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.ifba.vp.gerente.view;
+
 
 /**
  *
@@ -34,8 +40,8 @@ public class TelaGerente extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         sairTelaGerente = new javax.swing.JButton();
+        jLabelIconeGerente = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela do Gerente");
@@ -46,7 +52,7 @@ public class TelaGerente extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pesquisarFuncionario.setBackground(new java.awt.Color(255, 255, 255));
-        pesquisarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/funcionarios.png"))); // NOI18N
+        pesquisarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ifba/vp/gerente/view/funcionarios.png"))); // NOI18N
         pesquisarFuncionario.setText("Pesquisar Funcionário");
         pesquisarFuncionario.setMaximumSize(new java.awt.Dimension(111, 35));
         pesquisarFuncionario.setMinimumSize(new java.awt.Dimension(111, 35));
@@ -56,20 +62,20 @@ public class TelaGerente extends javax.swing.JFrame {
                 pesquisarFuncionarioActionPerformed(evt);
             }
         });
-        jPanel1.add(pesquisarFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 220, -1));
+        jPanel1.add(pesquisarFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 220, 40));
 
         cadastroFuncionario.setBackground(new java.awt.Color(255, 255, 255));
-        cadastroFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/novoFuncionario.png"))); // NOI18N
+        cadastroFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ifba/vp/gerente/view/novoFuncionario.png"))); // NOI18N
         cadastroFuncionario.setText("Cadastrar Funcionário");
         cadastroFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastroFuncionarioActionPerformed(evt);
             }
         });
-        jPanel1.add(cadastroFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 220, -1));
+        jPanel1.add(cadastroFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 220, 40));
 
         cadastroFornecedor.setBackground(new java.awt.Color(255, 255, 255));
-        cadastroFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fornecedores.png"))); // NOI18N
+        cadastroFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ifba/vp/gerente/view/fornecedores.png"))); // NOI18N
         cadastroFornecedor.setText("Cadastrar Fornecedor");
         cadastroFornecedor.setMaximumSize(new java.awt.Dimension(111, 35));
         cadastroFornecedor.setMinimumSize(new java.awt.Dimension(111, 35));
@@ -79,10 +85,10 @@ public class TelaGerente extends javax.swing.JFrame {
                 cadastroFornecedorActionPerformed(evt);
             }
         });
-        jPanel1.add(cadastroFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 220, -1));
+        jPanel1.add(cadastroFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 220, 40));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/VerEstoque.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ifba/vp/gerente/view/VerEstoque.png"))); // NOI18N
         jButton1.setText("Verificar Estoque");
         jButton1.setMaximumSize(new java.awt.Dimension(111, 35));
         jButton1.setMinimumSize(new java.awt.Dimension(111, 35));
@@ -92,7 +98,7 @@ public class TelaGerente extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 220, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 220, 40));
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -100,9 +106,7 @@ public class TelaGerente extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Modulo do Gerente");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Gerente.png"))); // NOI18N
-
-        sairTelaGerente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logout.png"))); // NOI18N
+        sairTelaGerente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ifba/vp/gerente/view/logout.png"))); // NOI18N
         sairTelaGerente.setText("Sair");
         sairTelaGerente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,16 +114,19 @@ public class TelaGerente extends javax.swing.JFrame {
             }
         });
 
+        jLabelIconeGerente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ifba/vp/gerente/view/Gerente.png"))); // NOI18N
+        jLabelIconeGerente.setText("jLabel1");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(22, 22, 22)
+                .addComponent(jLabelIconeGerente, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 281, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 311, Short.MAX_VALUE)
                 .addComponent(sairTelaGerente)
                 .addContainerGap())
         );
@@ -127,24 +134,24 @@ public class TelaGerente extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(sairTelaGerente)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel9))
-                .addGap(28, 28, 28))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabelIconeGerente)
+                    .addComponent(sairTelaGerente))
+                .addGap(19, 19, 19))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 510, 60));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 550, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 551, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
         );
 
         pack();
@@ -171,7 +178,7 @@ public class TelaGerente extends javax.swing.JFrame {
 
     private void pesquisarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarFuncionarioActionPerformed
         // TODO add your handling code here:
-        new PesquisarFuncionario().setVisible(true);
+        new TelaPesquisarFuncionario().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_pesquisarFuncionarioActionPerformed
 
@@ -221,8 +228,8 @@ public class TelaGerente extends javax.swing.JFrame {
     private javax.swing.JButton cadastroFornecedor;
     private javax.swing.JButton cadastroFuncionario;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelIconeGerente;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JButton pesquisarFuncionario;

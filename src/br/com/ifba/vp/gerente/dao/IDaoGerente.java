@@ -6,12 +6,13 @@
 package br.com.ifba.vp.gerente.dao;
 
 import br.com.ifba.vp.gerente.model.bean.Gerente;
+import br.com.ifba.vp.infrastructure.dao.IGenericDao;
 import java.util.List;
 
 /**
  *
  * @author gusta
  */
-public interface IDaoGerente {
-    public abstract List<Gerente> findByIdSenhaGerente(Gerente gerente);
+public interface IDaoGerente extends IGenericDao<Gerente>{
+    public abstract List<Gerente> findByCpfSenhaGerente(Gerente gerente);
 }

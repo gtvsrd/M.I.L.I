@@ -1,11 +1,7 @@
 package br.com.ifba.vp.produto.model.bean;
+
 import br.com.ifba.vp.infrastructure.model.AbstractEntity;
-import java.sql.Date;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -19,49 +15,55 @@ import javax.persistence.Table;
  * @author Icaro
  */
 
+
 @Entity
-
-public class Produto {
+public class Produto extends AbstractEntity {
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    private String nomeProduto;
-    private Integer lote;
-    private double preco;
+    private String nome;
+    private Long lote;
+    private Double preco;
     private String genero;
-    private Integer secao;
+    private Long secao;
     private String dataValidade;
+    private Long codigoBarras;
+
+    public Long getCodigoBarras() {
+        return codigoBarras;
+    }
+
+    public void setCodigoBarras(Long codigoBarras) {
+        this.codigoBarras = codigoBarras;
+    }
     
-    public void setId(Integer id) {
-        this.id = id;
+    public void setSecao(Long secao) {
+        this.secao = secao;
     }
-
-    public Integer getId() {
-        return id;
+    
+    public Long getSecao() {
+        return secao;
     }
-
-    public String getNomeProduto() {
-        return nomeProduto;
-    }
-
-    public void setNomeProduto(String nomeProduto) {
-        this.nomeProduto = nomeProduto;
-    }
-
-    public Integer getLote() {
-        return lote;
-    }
-
-    public void setLote(Integer lote) {
+    
+    public void setLote(Long lote) {
         this.lote = lote;
     }
+    
+    public Long getLote() {
+        return lote;
+    }
+    
+    public String getNome() {
+        return nome;
+    }
 
-    public double getPreco() {
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Double getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(Double preco) {
         this.preco = preco;
     }
 
@@ -71,14 +73,6 @@ public class Produto {
 
     public void setGenero(String genero) {
         this.genero = genero;
-    }
-
-    public Integer getSecao() {
-        return secao;
-    }
-
-    public void setSecao(Integer secao) {
-        this.secao = secao;
     }
 
     public String getDataValidade() {

@@ -17,20 +17,8 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public abstract class Funcionario extends Pessoa {
     
-    protected Boolean gerente;
     protected String email;
     protected Long senha;
-    
-    @Column(nullable = true)
-    protected String especializacao;
-
-    public String getEspecializacao() {
-        return especializacao;
-    }
-    
-    public void setEspecializacao(String especializacao) {
-        this.especializacao = especializacao;
-    }
 
     public String getEmail() {
         return email;
@@ -47,18 +35,4 @@ public abstract class Funcionario extends Pessoa {
     public void setSenha(Long senha) {
         this.senha = senha;
     }
-
-    public Boolean getGerente() {
-        return gerente;
-    }
-
-    public void setGerente(Boolean gerente) {
-        this.gerente = gerente;
-    }
-    
-    public abstract void CadastroCliente();
-    
-    public abstract void CadastroProduto();
-    
-    public abstract void ControleEstoque();
 }

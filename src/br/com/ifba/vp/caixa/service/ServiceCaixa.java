@@ -6,8 +6,8 @@
 package br.com.ifba.vp.caixa.service;
 
 import br.com.ifba.vp.caixa.model.bean.Caixa;
-import br.com.ifba.vp.caixa.view.TelaCaixa;
-import br.com.ifba.vp.infrastructure.exception.BusinessException;
+import br.com.ifba.vp.caixa.dao.DaoCaixa;
+import br.com.ifba.vp.caixa.dao.IDaoCaixa;
 import java.util.List;
 
 /**
@@ -15,40 +15,37 @@ import java.util.List;
  * @author gusta
  */
 public class ServiceCaixa implements IServiceCaixa {
-    public final static String FUNCIONARIO_NULL = "Funcionario null";
-    public final static String FUNCIONARIO_NAO_EXISTE = "Funcionario não existe";
-    public final static String SENHA_NULL = "Senha null";
-    // Representa a mensagem de erro se o Grupo de Pesquisa for nulo.
-    public final static String CPF_NULL = "CPF null";
-    // Representa a mensagem de erro se o Grupo de Pesquisa já existir.
-    public final static String CPF_NAO_EXISTE = "Este CPF não existe na base de dados";
-    // Representa a mensagem de erro se o Grupo de Pesquisa for inválido.
-    public final static String CPF_INVALIDO = "CPF inválido";
+    
+    private final IDaoCaixa daoCaixa = new DaoCaixa();
     
     @Override
-    public Caixa saveCaixa(Caixa funcionarioCaixa) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Caixa saveCaixa(Caixa caixa) {
+        return this.daoCaixa.save(caixa);
     }
 
     @Override
-    public Caixa updateCaixa(Caixa funcionarioCaixa) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Caixa updateCaixa(Caixa caixa) {
+        return this.daoCaixa.update(caixa);
     }
 
     @Override
-    public void deleteCaixa(Caixa funcionarioCaixa) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void deleteCaixa(Caixa caixa) {
+        this.daoCaixa.delete(caixa);
     }
 
     @Override
-    public List<Caixa> getAllCaixa() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Caixa> findAllCaixa() {
+        return this.daoCaixa.findAll();
     }
 
     @Override
-    public Caixa getByIdCaixa(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Caixa findByIdCaixa(Long id) {
+        return this.daoCaixa.findById(id);
     }
     
+    @Override
+    public Caixa findByCpfCaixa(String cpf) {
+        return this.daoCaixa.findByCpfCaixa(cpf);
+    }
     
 }

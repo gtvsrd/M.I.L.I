@@ -5,6 +5,8 @@
  */
 package br.com.ifba.vp.gerente.service;
 
+import br.com.ifba.vp.gerente.dao.DaoGerente;
+import br.com.ifba.vp.gerente.dao.IDaoGerente;
 import br.com.ifba.vp.gerente.model.bean.Gerente;
 import java.util.List;
 
@@ -14,29 +16,31 @@ import java.util.List;
  */
 public class ServiceGerente implements IServiceGerente {
 
+    private final IDaoGerente daoGerente = new DaoGerente();
+    
     @Override
     public Gerente saveGerente(Gerente gerente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.daoGerente.save(gerente);
     }
 
     @Override
     public Gerente updateGerente(Gerente gerente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.daoGerente.update(gerente);
     }
 
     @Override
     public void deleteGerente(Gerente gerente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.daoGerente.delete(gerente);
     }
 
     @Override
-    public List<Gerente> getAllGerente() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Gerente> findAllGerente() {
+        return this.daoGerente.findAll();
     }
 
     @Override
-    public Gerente getByIdGerente(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Gerente findByIdGerente(Long id) {
+        return this.daoGerente.findById(id);
     }
     
 }

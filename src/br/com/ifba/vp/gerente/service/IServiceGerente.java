@@ -16,7 +16,7 @@ public interface IServiceGerente {
     public abstract Gerente saveGerente(Gerente gerente);
     public abstract Gerente updateGerente(Gerente gerente);
     public abstract void deleteGerente(Gerente gerente);
-    public abstract List<Gerente> getAllGerente();
-    public abstract Gerente getByIdGerente(Long id);
+    public abstract List<Gerente> findAllGerente();
+    public abstract Gerente findByIdGerente(Long id);
     
 }

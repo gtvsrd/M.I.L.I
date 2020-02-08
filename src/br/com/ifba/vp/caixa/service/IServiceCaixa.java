@@ -13,14 +13,10 @@ import java.util.List;
  * @author gusta
  */
 public interface IServiceCaixa {
-    // Metodo que salva um Grupo de Pesquisa na base de dados
-    public abstract Caixa saveCaixa (Caixa funcionarioCaixa);
-    // Metodo que atualiza um Grupo de Pesquisa que já existe na base de dados
-    public abstract Caixa updateCaixa (Caixa funcionarioCaixa);
-    // Metodo que deleta um Grupo de Pesquisa da base de dados
-    public abstract void deleteCaixa (Caixa funcionarioCaixa);
-    // Metodo que retorna todos os Grupo de Pesquisa da base de dados
-    public abstract List<Caixa> getAllCaixa();
-    // Método que retorna um Grupo de Pesquisa pelo Id
-    public abstract Caixa getByIdCaixa(Long id);
+    public abstract Caixa saveCaixa (Caixa caixa);
+    public abstract Caixa updateCaixa (Caixa caixa);
+    public abstract void deleteCaixa (Caixa caixa);
+    public abstract List<Caixa> findAllCaixa();
+    public abstract Caixa findByIdCaixa(Long id);
+    public abstract Caixa findByCpfCaixa(String cpf);
 }
