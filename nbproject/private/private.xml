@@ -2,35 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/gerente/dao/IDaoGerente.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/gerente/service/IServiceGerente.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/gerente/model/bean/Gerente.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/infrastructure/pessoa/Pessoa.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/infrastructure/connection/Funcionario.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/caixa/dao/DaoCaixa.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/caixa/model/bean/CaixaTest.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/caixa/dao/IDaoCaixa.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/infrastructure/dao/GenericDao.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/caixa/service/IServiceCaixa.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/cliente/dao/DaoCliente.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/infrastructure/service/ServiceLogin.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/infrastructure/service/Facade.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/gerente/service/ServiceGerente.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/gerente/view/TelaCadastroFuncionario.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/cliente/view/TelaCadastroCliente.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/infrastructure/dao/IGenericDao.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/infrastructure/service/IFacade.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/gerente/model/bean/GerenteTest.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/caixa/service/ServiceCaixa.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/cliente/service/ServiceCliente.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/cliente/service/IServiceCliente.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/caixa/model/bean/Caixa.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/gerente/view/PesquisarFuncionario.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/cliente/dao/IDaoCliente.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/infrastructure/pessoa/Endereco.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/cliente/model/bean/Cliente.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/mili/src/br/com/ifba/vp/gerente/dao/DaoGerente.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
