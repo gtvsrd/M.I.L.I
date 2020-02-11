@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.ifba.vp.infrastructure.connection;
 
 import javax.persistence.EntityManager;
@@ -14,7 +9,10 @@ import javax.persistence.Persistence;
  * @author gusta
  */
 public class ConnectionFactory {
+    // Cria um EntityManagerFactory com o nome do persistence unit do persistence.xml
     private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("mili");
+    
+    //Função que cria um EntityManager para estabelecer uma conexão com o banco de dados
     public EntityManager getConnection() {
         return emf.createEntityManager();
     }
